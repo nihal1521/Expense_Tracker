@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Animation</title>
+<style>
+  .container {
+    position: relative;
+    width: 400px; /* Adjust width and height as needed */
+    height: 400px;
+  }
+
+  #image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease-in-out; /* Animation transition */
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <img src="image1.jpg" alt="Image" id="image">
+</div>
+<script>
+  const image = document.getElementById('image');
+
+  // Define an array of image URLs
+  const imageUrls = [
+    'C:\Users\fool0\OneDrive\Desktop\Baby\20240124171446_IMG_1590.JPG',
+    'C:\Users\fool0\OneDrive\Desktop\Baby\20240124030902_IMG_3488-1.JPG',
+    'C:\Users\fool0\OneDrive\Desktop\Baby\20240124171440_IMG_1588.JPG',
+    '"C:\Users\fool0\OneDrive\Desktop\Baby\20240124171437_IMG_1587.JPG"',
+    // Add more image URLs as needed
+  ];
+
+  let currentIndex = 0;
+
+  // Function to change the image
+  function changeImage() {
+    image.src = imageUrls[currentIndex];
+    currentIndex = (currentIndex + 1) % imageUrls.length;
+  }
+
+  // Call the function to start the animation
+  setInterval(changeImage, 2000); // Change image every 2 seconds
+</script>
+</body>
+</html>
